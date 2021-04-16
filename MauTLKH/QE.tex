@@ -1,0 +1,192 @@
+% Nanyang Technological University - Qualification Examination report template
+% 1st Draft 27/June/2014 (v.1.0) (Written by Ali Qasim - eng.amq@gmail.com)
+% A modified version of Harvard thesis template
+% ---------------------------------------------------------------------------- %
+% Update v.1.1 26/August/2014 (Written by Ali Qasim - eng.amq@gmail.com)
+% 1- Abstract moved to the beginning of the frontmatter.
+% 2- Page numbering format for frontmatter changed to capitalized roman "Roman".
+% 3- Cover page is a closer match to that provided by the faculty, with an empty page added after it.
+% 4- Modified IEEE citation style to disable replacing author names with dashes in consecutive references with similar author names.
+
+% ---------------------------------------------------------------------------- %
+% Set Document Class
+% ---------------------------------------------------------------------------- %
+\documentclass[11pt,oneside,final]{ntu_qe}
+
+\newcommand{\numcol}{1}
+% ---------------------------------------------------------------------------- %
+% Includes Packages
+% ---------------------------------------------------------------------------- %
+
+%-----------------------------------------------------------
+% Customized
+\usepackage[utf8]{vietnam}
+%\usepackage{breqn}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{bbm}
+
+
+%\usepackage[style=authoryear,backend=biber]{biblatex}
+%\usepackage{mathptmx}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+%-----------------------------------------------------------
+
+
+\usepackage{NTUdis}
+\usepackage{setspace}
+\usepackage{graphicx} 
+\graphicspath{{Figures/}}
+\usepackage{float}
+\usepackage{subfigure}
+%\usepackage{algorithm}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{supertabular}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage{fancyheadings}
+\usepackage{psfrag}
+\usepackage{amsmath}
+\usepackage{hhline}
+\usepackage{type1cm}
+\usepackage{lettrine}
+\usepackage{cite}
+\usepackage{fancybox}
+\usepackage{ctable}
+
+\usepackage[ruled,vlined]{algorithm2e}
+% ---------------------------------------------------------------------------- %
+% Document Setting
+% ---------------------------------------------------------------------------- %
+\input{FORMAT/my_format.tex}
+% - Spacing mode
+\newcommand{\setsinglespace}{\ssp}
+\newcommand{\setonehalfspace}{\hsp}
+\newcommand{\setdoublespace}{\dsp}
+% - Define the function "NewPage" to force create a new page when needed
+\newcommand*\NewPage{\newpage\null\thispagestyle{empty}\newpage}
+% ---------------------------------------------------------------------------- %
+% Table Of Contents Setup
+% - max depth listed:
+% 1 = section, 2 = subsection, 3 = subsubsection
+% ---------------------------------------------------------------------------- %
+
+%
+% HaQT
+\newcommand{\smallwedge}{\scriptscriptstyle \wedge} 
+%
+
+\setcounter{tocdepth}{3}
+
+\begin{document}
+\setdoublespace
+% ---------------------------------------------------------------------------- %
+% Title page
+% includes -  Front and Second covers
+% ---------------------------------------------------------------------------- %
+%\pagestyle{empty}
+
+\input{PREFACE/titlepage}
+\hsp
+\NewPage
+% ---------------------------------------------------------------------------- %
+% Front Matters
+% includes - Table of Contents, Abstract, Acknowledgement, 
+% List of Figures and List of Tables
+% ---------------------------------------------------------------------------- %
+%\input{PREFACE/frontmatter}
+%\setdoublespace
+% ---------------------------------------------------------------------------- %
+\hsp
+% ---------------------------------------------------------------------------- %
+% Chapter 0 - 
+\chapter*{Lời nói đầu}\label{CH3}
+\input{BODY/LoiNoiDau}
+% ---------------------------------------------------------------------------- %
+% Chapter 1
+\chapter{Kiến thức cơ sở}\label{CH1}
+\input{BODY/Chuong1}
+% ---------------------------------------------------------------------------- %
+% Chapter 2 - 
+\chapter{Một số ứng dụng của biến đổi Fourier}\label{CH2}
+\input{BODY/Chuong2}
+% ---------------------------------------------------------------------------- %
+% Chapter 3 - 
+\chapter{Ứng dụng DFT trong nén ảnh số}\label{CH3}
+\input{BODY/Chuong3}
+% ---------------------------------------------------------------------------- %
+% Chapter 4 - 
+\chapter*{Lời Kết}\label{CH4}
+\input{BODY/LoiKet}
+% ----------------------------------------------------------------------------
+%
+% List of Publications
+%\addcontentsline{toc}{chapter}{List of Publications}
+%\renewcommand{\bibname}{List of Publications}
+%\renewcommand{\bibname}{Công bố khoa học}
+%\input{APPENDIX/ListOfPublications}
+% ----------------------------------------------------------------------------%
+% Bibliography
+% ----------------------------------------------------------------------------
+\renewcommand{\bibname}{Tài liệu tham khảo}
+\input{APPENDIX/References}
+
+%\ssp
+%\renewcommand{\bibname}{References}
+%\renewcommand{\bibname}{Tài liệu tham khảo}
+%\bibliography{APPENDIX/References}
+% ---------------------------------------------------------------------------- %
+% Appendix 
+%\newpage
+%\appendix
+% ---------------------------------------------------------------------------- % 
+% Appendix A - 
+% ---------------------------------------------------------------------------- %
+%\input{..}
+% ---------------------------------------------------------------------------- %
+% Appendix B - 
+% ---------------------------------------------------------------------------- %
+%\input{..}
+% ---------------------------------------------------------------------------- %
+\end{document}
+% ---------------------------------------------------------------------------- %
